@@ -1,0 +1,13 @@
+{% extends 'mainapp.html' %}
+
+{% block title%} Title: {{ X }} {% endblock %}
+
+{% block book %}
+<h1> Hello from adventure </h1>
+<h2> Time: {{ Y }} </h2>
+<pre>
+    Let's go. In and out. Twenty minute adventure.
+</pre>
+
+{% include "test.html" with name=Z %}
+{% endblock %}

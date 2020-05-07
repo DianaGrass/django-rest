@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from book.models import Genre, BookModel
+from book.models import Genre, Book
 from django.contrib.auth.models import User
 
 
@@ -15,18 +15,18 @@ class GenreSerializerAPI(serializers.ModelSerializer):
         fields = ("title",)
 
 
-class BookModelSerialzerAPI(serializers.ModelSerializer):
+class BookSerializerAPI(serializers.ModelSerializer):
     publisher = UserSerializerAPI()
     genre = GenreSerializerAPI()
 
     class Meta:
-        model = BookModel
+        model = Book
         fields = "__all__"
 
 
-class BookModelSerializerAPIPOST(serializers.ModelSerializer):
+class BookSerializerAPIPOST(serializers.ModelSerializer):
     class Meta:
-        model = BookModel
+        model = Book
         fields = (
             "title",
             "text",
