@@ -1,0 +1,14 @@
+{% extends 'mainapp.html' %}
+
+{% block title%} Title: {{ X }} {% endblock %}
+
+{% block book %}
+<h1> hello from world.html </h1>
+<h2> Eclipse: {{ Y }} </h2>
+<pre>
+    There is no dark side of the moon really.
+    Matter of fact it's all dark.
+</pre>
+
+{% include "test.html" with name=Z %}
+{% endblock %}

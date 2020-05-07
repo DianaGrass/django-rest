@@ -6,4 +6,4 @@ def hello(request):
 
 
 def world(request):
-    return render(request, "world.html", {"X": "Bla-bla-bla", "Y": "Про покупки", "Z": "100500"})
+    return render(request, "world.html", {"X": "text", "Y": "PF", "Z": "1212123"})
