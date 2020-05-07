@@ -11,7 +11,7 @@ class Genre(models.Model):
         return self.title
 
 
-class BookModel(models.Model):
+class Book(models.Model):
     title = models.CharField(max_length=30)
     text = models.TextField()
     author = models.CharField(max_length=30)

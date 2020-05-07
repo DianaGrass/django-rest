@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%} main title {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+body {
+  background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm100-tang-09b-neonframe_1.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=d9efa427e9b30f94a1c35b180b75ba03');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    <div class="jumbotron">
+    <h1>HELLO EVERYBODY</h1>
+    <p>Bootstrap is the most popular HTML, CSS...</p>
+</div>
+</head>
+<body>
+<div class="container">
+  {% block book %}
+  {% endblock %}
+</div>
+
+</body>
+<div class="jumbotron">
+    <h1>Footer</h1>
+    <p>Bootstrap is the most popular HTML, CSS...</p>
+</div>
+
+</html>

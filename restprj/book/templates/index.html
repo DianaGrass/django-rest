@@ -1,0 +1,9 @@
+{% extends 'mainapp.html' %}
+
+{% block title %} index title {% endblock %}
+
+{% block book %}
+<h1> hello from index.html </h1>
+<h2> my name is {{ name }} </h2>
+{% include "test.html" with name=user %}
+{% endblock %}
