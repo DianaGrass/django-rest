@@ -21,3 +21,11 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    comment_book = models.ForeignKey(Book,
+                                     on_delete=models.CASCADE,
+                                     related_name="comment")
+    text = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
