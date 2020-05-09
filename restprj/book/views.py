@@ -11,3 +11,7 @@ def world(request):
 
 def adventure(request):
     return render(request, "adventure.html", {"what": "adventure", "time": "20", "text": "go"})
+
+
+def train(request):
+    return render(request, "train.html", {"what": "train", "text": "www.train.com"})
