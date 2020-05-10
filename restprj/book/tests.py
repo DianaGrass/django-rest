@@ -56,3 +56,9 @@ class AppBookTestCase(TestCase):
     def test_check_code404(self):
         res = self.client.get('/das_url/')
         self.assertEqual(res.status_code, 404)
+
+    def test_book_title_max_length(self):
+        book = Book.objects.get(id=1)
+        max_length = book._meta.get_field('title').max_length
+        self.assertEquals(max_length, 100)
+
