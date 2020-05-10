@@ -1,4 +1,8 @@
 from django.shortcuts import render, HttpResponse
+from .models import Book
+from .serializers import BookSerializer, BookSerializerCreate
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework import permissions
 
 
 def hello(request):
@@ -19,3 +23,21 @@ def train(request):
 
 def trip(request):
     return render(request, "trip.html")
+
+
+class BookListView(ListAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = BookSerializer
+
+
+class BookCreateView(CreateAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = BookSerializerCreate
+
+
+class BookDetailView(RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = BookSerializerCreate
+    queryset = Book.objects.all()
+
+

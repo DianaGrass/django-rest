@@ -1,36 +1,34 @@
-from rest_framework import serializers
-from book.models import Genre, Book
+from rest_framework.serializers import ModelSerializer
+from .models import Book
 from django.contrib.auth.models import User
 
 
-class UserSerializerAPI(serializers.ModelSerializer):
+class UserSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = ("id", "username")
 
+#
+# class GenreSerializerCreate(ModelSerializer):
+#     class Meta:
+#         model = Genre
+#         fields = ("title",)
 
-class GenreSerializerAPI(serializers.ModelSerializer):
-    class Meta:
-        model = Genre
-        fields = ("title",)
 
-
-class BookSerializerAPI(serializers.ModelSerializer):
-    publisher = UserSerializerAPI()
-    genre = GenreSerializerAPI()
+class BookSerializerCreate(ModelSerializer):
+    # publisher = UserSerializerAPI()
+    # genre = GenreSerializerAPI()
 
     class Meta:
         model = Book
         fields = "__all__"
 
 
-class BookSerializerAPIPOST(serializers.ModelSerializer):
+class BookSerializer(ModelSerializer):
+    author = UserSerializer()
+
     class Meta:
         model = Book
-        fields = (
-            "title",
-            "text",
-            "author",
-            "publisher",
-            "genre",
-        )
+        fields = "__all__"
+
+

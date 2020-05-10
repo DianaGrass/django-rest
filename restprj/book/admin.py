@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Genre, Book
+from .models import Book
 
 
 class BookModelAdmin(admin.ModelAdmin):
-    fields = ("title", "text", "author", "publisher", "genre")
+    fields = ("title", "text", "author", "genre")
 
 
 admin.site.register(Book, BookModelAdmin)
-admin.site.register(Genre)
+# admin.site.register(Genre)
