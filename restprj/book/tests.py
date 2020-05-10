@@ -48,3 +48,11 @@ class AppBookTestCase(TestCase):
             password="1234"
         )
         self.assertEqual(res, True)
+
+    def test_check_code200(self):
+        res = self.client.get('/')
+        self.assertEqual(res.status_code, 200)
+
+    def test_check_code404(self):
+        res = self.client.get('/das_url/')
+        self.assertEqual(res.status_code, 404)
