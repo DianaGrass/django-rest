@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from .models import Book
-from .serializers import BookSerializer, BookSerializerCreate
+from .models import Book, Genre
+from .serializers import BookSerializer, BookSerializerCreate, GenreSerializerCreate, GenreSerializer
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import permissions
 
@@ -40,5 +40,16 @@ class BookDetailView(RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated, ]
     serializer_class = BookSerializerCreate
     queryset = Book.objects.all()
+
+
+class GenreListView(ListAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = GenreSerializer
+    queryset = Genre.objects.all()
+
+
+class GenreCreateView(CreateAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = GenreSerializerCreate
 
 
