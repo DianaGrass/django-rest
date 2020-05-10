@@ -24,9 +24,6 @@ class GenreSerializerCreate(ModelSerializer):
 
 
 class BookSerializerCreate(ModelSerializer):
-    # publisher = UserSerializerAPI()
-    # genre = GenreSerializer()
-
     class Meta:
         model = Book
         fields = "__all__"

@@ -18,13 +18,6 @@ class Book(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
 
-    # title = models.CharField(max_length=30)
-    # text = models.TextField()
-    # author = models.CharField(max_length=30)
-    # publisher = models.ForeignKey(User, on_delete=models.CASCADE)
-    # data = models.DateTimeField(auto_now_add=True)
-    # genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
-
     def __str__(self):
         return self.title
 
@@ -38,3 +31,5 @@ class Comment(models.Model):
                                      related_name="comment")
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+
+
