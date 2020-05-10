@@ -3,12 +3,11 @@ from .models import Book, Comment
 from django.contrib.auth.models import User
 
 
-# Create your tests here.
 class AppBookTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create(
             id=1,
-            username="test name"
+            username="name"
         )
         self.user.set_password("1234")
         self.user.save()
@@ -37,3 +36,15 @@ class AppBookTestCase(TestCase):
         book = Book.objects.get(id=1)
         comment = Comment.objects.filter(comment_book=book)
         self.assertCountEqual(book.comment.all(), comment)
+
+    def test_delete_book(self):
+        book = Book.objects.get(id=1).delete()
+        comment = Comment.objects.all()
+        self.assertCountEqual(comment, [])
+
+    def test_login(self):
+        res = self.client.login(
+            username="name",
+            password="1234"
+        )
+        self.assertEqual(res, True)
