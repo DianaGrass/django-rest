@@ -28,6 +28,7 @@ def trip(request):
 class BookListView(ListAPIView):
     permission_classes = [permissions.IsAuthenticated, ]
     serializer_class = BookSerializer
+    queryset = Book.objects.all()
 
 
 class BookCreateView(CreateAPIView):
