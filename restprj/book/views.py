@@ -14,4 +14,8 @@ def adventure(request):
 
 
 def train(request):
-    return render(request, "train.html", {"what": "train", "text": "www.train.com"})
+    return render(request, "train.html", {"what": "train", "time": "20", "text": "www.train.com"})
+
+
+def trip(request):
+    return render(request, "trip.html")
