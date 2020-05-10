@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Select book to change | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css">
+
+
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-book model-book change-list"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>di</strong>.
+
+
+
+                    <a href="/">View site</a> /
+
+
+
+
+
+
+                <a href="/admin/password_change/">Change password</a> /
+
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
+
+
+
+    </div>
+    <!-- END Header -->
+
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/book/">Book</a>
+&rsaquo; Books
+</div>
+
+
+
+
+
+
+
+    <!-- Content -->
+    <div id="content" class="flex">
+
+        <h1>Select book to change</h1>
+
+  <div id="content-main">
+
+        <ul class="object-tools">
+
+
+
+
+
+  <li>
+
+    <a href="/admin/book/book/add/" class="addlink">
+      Add book
+    </a>
+  </li>
+
+
+
+
+        </ul>
+
+
+    <div class="module" id="changelist">
+
+
+
+
+
+
+
+
+
+      <form id="changelist-form" method="post" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="NFdbGq8wcUZ2NOZ6kZZatscv4lPypFmhbEM53oGdF7oxITd8Vxsohpkh8EaCAd3m">
+
+
+
+
+<div class="actions">
+
+
+    <label>Action: <select name="action" required>
+  <option value="" selected>---------</option>
+
+  <option value="delete_selected">Delete selected books</option>
+
+</select></label><input type="hidden" name="select_across" value="0" class="select-across">
+
+
+    <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+
+
+
+        <span class="action-counter" data-actions-icnt="3">0 of 3 selected</span>
+
+
+
+
+</div>
+
+
+
+
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
+
+<th scope="col"  class="action-checkbox-column">
+
+   <div class="text"><span><input type="checkbox" id="action-toggle"></span></div>
+   <div class="clear"></div>
+</th>
+<th scope="col"  class="column-__str__">
+
+   <div class="text"><span>Book</span></div>
+   <div class="clear"></div>
+</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr class="row1"><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="4" class="action-select"></td><th class="field-__str__"><a href="/admin/book/book/4/change/">4</a></th></tr>
+
+
+<tr class="row2"><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="3" class="action-select"></td><th class="field-__str__"><a href="/admin/book/book/3/change/">3</a></th></tr>
+
+
+<tr class="row1"><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="2" class="action-select"></td><th class="field-__str__"><a href="/admin/book/book/2/change/">2</a></th></tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+<p class="paginator">
+
+3 books
+
+
+</p>
+
+      </form>
+    </div>
+  </div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>
